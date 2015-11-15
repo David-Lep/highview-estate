@@ -1,9 +1,6 @@
 <?php
 
-//include_once('../../inc/highview/pdo_connect.php');
 require('pdo_connect.php');
-
-
 
 class property {
 	public function __construct($req, $type){

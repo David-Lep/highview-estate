@@ -108,28 +108,6 @@ class mail {
 	}
 
 	protected function email($conn) {
-		/*//Currently Disabled
-		$url = 'https://api.sendgrid.com/';
-		$user = 'leppy';
-		$pass = 'awpzBkZdmvs6QdsuY1Yp';
-
-		$params = array (
-			'api_user'	=> "$user",
-			'api_key'   => "$pass",
-			'to'		=> "dleprevost@live.com", // set TO address to have the contact form's email content sent to
-			'subject'	=> "Highview Estate - " . $this->valid['subject'] . " Enquiry", // Either give a subject for each submission, or set to $subject
-			'html'		=> "<html><head><title> Contact Form</title><body>
-				Name: " . $this->valid['name'] . "\n<br>
-				Email: " . $this->valid['email'] . "\n<br>
-				Subject: " . $this->valid['subject'] . "\n<br>
-				Message: " . $this->valid['message'] . "<body></title></head></html>", // Set HTML here.  Will still need to make sure to reference post data names
-			'from'		=> "contact@highview.com.au", // set from address here, it can really be anything
-		);
-		*/
-/*
-Create array of recipients from email and alt_email tables in database
-Loop through array sending the message to each
-*/
 		$sth = $conn->prepare('SELECT email, alt_email FROM email_recipient');
 		$sth->execute();
 		while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
@@ -139,19 +117,8 @@ Loop through array sending the message to each
 			}
 
 		}
-		//var_dump($this->recipients);
 		foreach($this->recipients as $contact) {
-		/*	$to = $contact;
-			$subject = "Highview Estate - " . $this->valid['subject'] . " Enquiry";
-			$message = "Name: " . $this->valid['name'] . "\r\nContact Number: " . $this->valid['phone'] . "\r\nMessage: \r\n" . $this->valid['message'];
-			$headers = 'From:' . $this->valid['email'] . "\r\n" .
-						'Reply-To:' . $this->valid['email'] . "\r\n" .
-						'X-Mailer: PHP/' . phpversion();
-
-			return mail($to, $subject, $message, $headers); //Using SendGrid
-			*/
-
-			$to = $contact; //Using PHP mail();
+			$to = $contact;
 			$subject = "Highview Estate - " . $_POST['contact_subject'] . " enquiry";
 			$message = "Name: " . $_POST['contact_name'] . "\r\nContact Number: " . $_POST['contact_phone'] . "\r\nMessage: \r\n" . $_POST['contact_message'];
 			$headers = 'From:' . $_POST['contact_email'] . "\r\n" .
@@ -159,26 +126,10 @@ Loop through array sending the message to each
 			    'X-Mailer: PHP/' . phpversion();
 
 
-			//return mail($to, $subject, $message, $headers);
-			//Mail is temporarily Disabled
+			return mail($to, $subject, $message, $headers);
 		};
 		$_SESSION['sent'] = 1;
 		header('Location:contact.php');
-
-	/*
-
-
-
-		$to = $config['contact_form_email'];
-		//$to      = '';
-		$subject = "Highview Estate - " . $_POST['contact_subject'] . " enquiry";
-		$message = "Name: " . $_POST['contact_name'] . "\r\nContact Number: " . $_POST['contact_phone'] . "\r\nMessage: \r\n" . $_POST['contact_message'];
-		$headers = 'From:' . $_POST['contact_email'] . "\r\n" .
-		    'Reply-To:' . $_POST['contact_email'] . "\r\n" .
-		    'X-Mailer: PHP/' . phpversion();
-
-		return mail($to, $subject, $message, $headers);
-*/
 	}
 
 }

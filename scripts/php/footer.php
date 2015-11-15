@@ -59,14 +59,8 @@
     </div>
     <hr>
     <p>Visit us on <a href="https://plus.google.com/100170636015239822498/about" rel="publisher">Google+</a></p>
-
-
-
   </footer>
 
-
-
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="scripts/javascript/bourbon.js"></script>
 	<script src="scripts/javascript/jquery.flexslider.js"></script>
