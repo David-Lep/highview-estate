@@ -21,7 +21,7 @@ if(isset($content->result['meta_desc'])){ //If custom metadata is set
 ?>
 		<meta name="description" content="<?php echo $content->result['meta_desc']?>">
 		<meta name="keywords" content="<?php echo $content->result['meta_keywords']?>"><?php }//end custom metadata ?>
-		<link rel="stylesheet" href="application.css.css">
+		<link rel="stylesheet" href="css/application.css.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />

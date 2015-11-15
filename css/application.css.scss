@@ -7,22 +7,22 @@
 /**
     Global variables load first
 **/
-@import "css/variables";
+@import "variables";
 
 /**
     Modules
 **/
-@import "css/header";
-@import "css/article";
-@import "css/cards";
-@import "css/flexbox";
-@import "css/sideimg";
-@import "css/pagescroll";
-@import "css/plax";
-@import "css/tabs";
-@import "css/stats";
-@import "css/footer";
-@import "css/cms";
+@import "header";
+@import "article";
+@import "cards";
+@import "flexbox";
+@import "sideimg";
+@import "pagescroll";
+@import "plax";
+@import "tabs";
+@import "stats";
+@import "footer";
+@import "cms";
 
 
 main {
