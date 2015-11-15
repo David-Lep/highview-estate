@@ -1,0 +1,7 @@
+.bundle
+.DS_Store
+.sass-cache
+build
+Gemfile.lock
+pkg
+tmp/

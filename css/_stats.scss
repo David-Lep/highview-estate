@@ -1,0 +1,46 @@
+.stats {
+
+  $base-spacing: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $base-accent-color: #477dca !default;
+  $stats-color: lighten($base-accent-color, 10%);
+  padding: $base-spacing / 2;
+  margin-bottom: 2.5em;
+  
+  ul {
+    padding: 0;
+    display: inline-block;
+    margin-top: 2em;
+  }
+
+  li {
+    border-right: 1px solid transparentize($base-font-color, 0.8);
+    color: $stats-color;
+    display: inline;
+    float: left;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.1em;
+    padding: 0 0.7em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  span {
+    color: $base-font-color;
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+  }
+  li {
+    text-align: center;
+  }
+  width: 100%;
+}

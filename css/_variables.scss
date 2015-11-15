@@ -1,0 +1,45 @@
+/* Media Breakpoints */
+$mobile-size:em(320);
+$tablet-size:em(720);
+$desktop-size:em(960);
+$full-size:em(1200);
+
+/* Color Palette */
+$font-color: #000;
+$bg-color: #FFF;
+$primary-color: #D15858;
+$secondary-color: #fff;
+$secondary: #C14746;
+
+/* Sizing */
+$base-font-size: 16px;
+
+/* Fonts */
+$base-sans-serif: 'Open Sans', sans-serif;
+$base-serif: 'Roboto Slab', serif;
+$serif: 'Roboto Slab', serif;
+$sans-serif: 'Open Sans', sans-serif;
+
+/* Global Styles */
+body, html {
+  margin:0;
+  padding:0;
+}
+a:visited {
+	color: #A7B6D5;
+}
+
+
+/* Breakpoint Classes */
+.full-size {
+	display: none;
+	@include media(min-width ($mobile-size)){
+		display: inline;
+	}
+}
+.mobile-only {
+	display: none;
+	@include media(max-width ($mobile-size)) {
+		display: inline;
+	}
+}
